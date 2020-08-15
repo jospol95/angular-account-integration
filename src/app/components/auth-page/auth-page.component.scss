@@ -1,0 +1,13 @@
+#auth-page{
+  .container{
+    margin-top: 1em;
+    text-align: center;
+
+    a{
+      color: #1976d2;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
+}

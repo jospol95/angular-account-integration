@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "../node_modules/material-kit/assets/scss/material-kit";
+
+.centered-column{
+  float: none;
+  margin: 0 auto;
+}
+
+.facebook-btn{
+  background: #3b5998;
+  &:hover{
+    background: #3b5998;
+  }
+}
+
+.google-btn{
+  background: #DB4437;
+  &:hover{
+    background: #DB4437;
+  }
+}
+
+
