@@ -27,24 +27,25 @@ export class AuthenticationService extends BaseService {
   }
 
   // makes register request and saves Token
-  public login(userLoginModel: UserLoginDtoModel): Observable<boolean> {
-    return this.doLogin(userLoginModel).pipe(
-      map((authToken: string) => {
-        this.saveAuthToken(authToken);
-        return true;
-      }),
-      catchError((error) => {
-        return of(error);
-      })
-    );
+  public login(userLoginModel: UserLoginDtoModel): Observable<string> {
+    // return this.doLogin(userLoginModel).pipe(
+    //   map((authToken: string) => {
+    //     this.saveAuthToken(authToken);
+    //     return true;
+    //   }),
+    //   catchError((error) => {
+    //     return of(error);
+    //   })
+    // );
+    return this.doLogin(userLoginModel);
   }
 
-  private doLogin(userLoginModel: UserLoginDtoModel): Observable<string> {
-    return this._http.post<string>(this.baseAuthUrl + 'login', userLoginModel);
+  private doLogin(userLoginModel: UserLoginDtoModel): Observable<any> {
+    return this._http.post<any>(this.baseAuthUrl + '/login', userLoginModel );
   }
 
   private doRegister(userRegisterModel: UserRegisterDtoModel): Observable<string> {
-    return this._http.post<string>(this.baseAuthUrl + 'register', userRegisterModel);
+    return this._http.post<string>(this.baseAuthUrl + '/register', userRegisterModel);
   }
 
   private saveAuthToken(authToken: string) {
