@@ -1,6 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {noop} from 'rxjs';
+import {AuthenticationService} from '../../../services/authentication.service';
+import {UserDtoModel} from '../../../models/user-dto.model';
+import {UserRegisterDtoModel} from '../../../models/user-register-dto.model';
+import {AccountService} from '../../../services/account.service';
+import {UserAccountModel} from '../../../models/user-account.model';
 
 @Component({
   selector: 'app-account-integration',
@@ -9,16 +14,28 @@ import {noop} from 'rxjs';
 })
 export class AccountIntegrationComponent implements OnInit {
 
-  constructor(private readonly _router: Router) { }
+  constructor(private readonly _router: Router,
+              private readonly _authService: AuthenticationService,
+              private readonly _accountService: AccountService) {
+  }
+
+  public model = new UserAccountModel();
 
   ngOnInit() {
+    this._authService.checkTicketExp();
+    // const userId = this._accountService.getUserId();
+    // if (userId === null) {
+    //   this._router.navigate(['login']);
+    // }
+    this.model.id = this._accountService.getUserId();;
+    this._accountService.getUserDetails(this.model.id).subscribe((user) => {
+      this.model = user;
+    });
   }
 
   public showAlert() {
     window.alert('You already linked your account with Google!');
   }
 
-  public logOut() {
-    this._router.navigate(['/login']).then(() => noop());
-  }
+
 }
