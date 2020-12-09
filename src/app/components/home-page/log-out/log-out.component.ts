@@ -19,6 +19,7 @@ export class LogOutComponent implements OnInit {
 
   ngOnInit() {
     // TODO: Receive token in url params, then compare and kill that session?
+    // TODO 2: Redirect to budgetting app page, then send back here???
     this.logOut();
   }
 
