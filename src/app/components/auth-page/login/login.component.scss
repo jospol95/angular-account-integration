@@ -1,0 +1,27 @@
+#login-card {
+
+  .card-body{
+    //background: black;
+  }
+
+  #login-card-login {
+    //height: 45%;
+    //top: 5%;
+    position: relative;
+  }
+
+  #login-card-social {
+    height: 55%;
+  }
+}
+
+
+.login-btn{
+  bottom: 0px;
+  //&.disabled:hover{
+  //  cursor: default !important;
+  //}
+  //&.disabled{
+  //  color: gray !important;
+  //}
+}

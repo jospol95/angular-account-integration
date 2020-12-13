@@ -35,13 +35,16 @@
   }
 
   .toolbar {
-    height: 60px;
-    margin: -8px;
-    display: flex;
+    height: 55px;
     align-items: center;
-    background-color: #1976d2;
+    background-color: #37474F;
     color: white;
-    font-weight: 600;
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+  .toolbar .row{
+    padding-top: 15px;
   }
 
   .toolbar img {
@@ -297,15 +300,22 @@
 
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
-  &nbsp;
-  &nbsp;
-  &nbsp;
-  &nbsp;
-  <span>Account integration</span>
-    <div class="spacer"></div>
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <span>Budget Me - Personal budgeting app </span>
+    </div>
+  </div>
 </div>
 
 
+<ngx-spinner
+  bdColor = "rgba(0, 0, 0, 0.8)"
+  size = "medium"
+  color = "#e794ae"
+  type = "ball-clip-rotate-pulse"
+  [fullScreen] = "true">
+  <p style="color: white" > Loading... </p>
+</ngx-spinner>
 
 <router-outlet></router-outlet>
 

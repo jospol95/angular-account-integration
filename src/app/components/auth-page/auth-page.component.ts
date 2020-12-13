@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthPageComponent implements OnInit {
 
-  public loginClicked = true;
+  public loginClicked = false;
   constructor() { }
 
   ngOnInit() {

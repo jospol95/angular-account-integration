@@ -2,23 +2,15 @@
   <div class="container">
     <div class="row">
       <div class="col col-sm-12">
-        Welcome! Please <a (click)="loginClicked = true">Login</a> or <a (click)="loginClicked = false">Register</a> to
+        Welcome! Please <a [routerLink]="'register'">Register</a> or <a [routerLink]="'login'">Login</a> to
         continue
       </div>
     </div>
     <br>
-    <div class="row">
-      <div *ngIf="loginClicked" class="col col-md-8 col-sm-12 centered-column">
-        <app-login>
+      <router-outlet>
 
-        </app-login>
-      </div>
-      <div *ngIf="!loginClicked" class="col col-md-8 col-sm-12 centered-column">
-        <app-register>
+      </router-outlet>
 
-        </app-register>
-      </div>
-    </div>
 
   </div>
 </div>

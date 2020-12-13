@@ -1,5 +1,8 @@
-export class UserModel {
-  public email: boolean;
-  public password: boolean;
+import {AuthenticationMethod} from './authentication-method.enum';
 
+
+export class UserDtoModel {
+  public email: string;
+  public password: string;
+  public authenticationMethod: AuthenticationMethod;
 }

@@ -1,6 +1,6 @@
-import {UserLoginModel} from './user-login.model';
+import {UserDtoModel} from './user-dto.model';
 
-export class UserRegisterModel extends UserModel{
-  public firstName: boolean;
-  public lastName: boolean;
+export class UserRegisterDtoModel extends UserDtoModel {
+  public firstName: string;
+  public lastName: string;
 }
